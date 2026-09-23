@@ -391,3 +391,12 @@ a.board-row:hover { background: rgb(255 255 255 / .05); }
 }
 
 .link-icon.logo { background: transparent; object-fit: contain; padding: 2px; }
+
+/* contact */
+.contact {
+  margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 14px 24px; padding: 20px 24px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+.contact h3 { font-size: 1.05rem; margin-bottom: 4px; }
+.contact p { margin: 0; font-size: .88rem; color: var(--ink-2); max-width: 46em; }
