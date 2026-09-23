@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>noobow — Portfolio</title>
+  <meta name="description" content="ぬーぼー（noobow）のポートフォリオ。飛行機と献血という趣味から、JA-Fleet とけんけつノートを個人で開発・運営しています。">
+  <meta name="theme-color" content="#0b1b33">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="noobow — Portfolio">
+  <meta property="og:description" content="飛行機と献血という趣味から、JA-Fleet とけんけつノートを個人で開発・運営しています。">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@noobow">
+  <meta property="og:url" content="https://noobow.me/">
+  <meta property="og:image" content="https://noobow.me/images/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="搭乗券風のプロフィールカード。HBY（趣味）発 WEB（自作の Web サービス）行き。">
+  <link rel="canonical" href="https://noobow.me/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#about" aria-label="トップへ">
+        <span class="brand-mark" aria-hidden="true">✈</span>noobow
+      </a>
+      <nav aria-label="セクション">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#links">Links</a></li>
+        </ul>
+      </nav>
+      <button class="theme-btn" type="button" id="theme-btn" aria-label="配色を切り替え">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="about">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow mono">ABOUT ME</p>
+          <div class="hero-id">
+            <img class="avatar" src="/images/profile-256.webp" width="256" height="256" alt="ぬーぼーのプロフィール画像">
+            <h1 class="hero-title">
+              <span class="flap" data-flap="NOOBOW">NOOBOW</span>
+              <span class="hero-ja">ぬーぼー</span>
+            </h1>
+          </div>
+          <p class="lead">
+            「飛行機」や「献血」といった趣味と開発を掛け合わせて、
+            Web サービスを個人で企画・開発・運用しています。<br>
+            製造業向けSIerに2社勤務後、現在はフルリモートで小売業の社内SE（情シス）をしています。<br>
+            いちばん好きな言語は <strong>C#</strong>。
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#works">運営サービスを見る</a>
+            <a class="btn btn-ghost" href="#links">リンク</a>
+          </div>
+        </div>
+
+        <!-- boarding pass -->
+        <aside class="pass" aria-label="プロフィール（搭乗券風）">
+          <div class="pass-main">
+            <div class="pass-head mono">
+              <span>BOARDING PASS</span>
+              <span class="pass-airline">NB 034</span>
+            </div>
+            <div class="pass-route">
+              <div>
+                <p class="label">FROM</p>
+                <p class="iata mono">HBY</p>
+                <p class="city">飛行機・献血</p>
+              </div>
+              <div class="pass-plane" aria-hidden="true">
+                <svg viewBox="0 0 64 16" width="64" height="16"><path d="M0 8h54" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1.5" fill="none"/><path d="M50 2l12 6-12 6 3-6z" fill="currentColor"/></svg>
+              </div>
+              <div class="to">
+                <p class="label">TO</p>
+                <p class="iata mono">WEB</p>
+                <p class="city">自作の Web サービス</p>
+              </div>
+            </div>
+            <dl class="pass-fields">
+              <div><dt class="label">PASSENGER</dt><dd class="mono">NOOBOW</dd></div>
+              <div><dt class="label">SEAT</dt><dd class="mono">C#</dd></div>
+              <div><dt class="label">GATE</dt><dd class="mono">JA-FLEET</dd></div>
+              <div><dt class="label">HOME</dt><dd class="mono">KENKETSU</dd></div>
+            </dl>
+          </div>
+          <div class="pass-stub" aria-hidden="true">
+            <p class="label">CLASS</p>
+            <p class="mono stub-big">DEV</p>
+            <div class="barcode"></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="wrap profile">
+        <p class="profile-note">プライベートでは ASP.NET Core と PostgreSQL を軸に、アプリだけでなくサーバー（Oracle Cloud）、ネットワーク、Cloudflare まわりの構成・監視・バックアップまでひとりで面倒を見ています。「自分が欲しいもの」「趣味の仲間が便利になるもの」を作って、長く運用するのが好きです。</p>
+        <ul class="facts">
+          <li><span class="fact-k mono">PROFILE</span><span>1985年生まれ・山口出身・神奈川在住</span></li>
+          <li><span class="fact-k mono">FAMILY</span><span>3人家族＋高齢猫 <span class="mono muted">#2016apr_baby</span></span></li>
+          <li><span class="fact-k mono">ROLE</span><span>社内SE（情シス）・フルリモート</span></li>
+          <li><span class="fact-k mono">CAREER</span><span>製造業向けSIer ×2社 → 小売 社内SE</span></li>
+          <li><span class="fact-k mono">FAVORITE LANGUAGE</span><span>C#</span></li>
+          <li><span class="fact-k mono">PERSONAL DEVELOPMENT</span><span>JA-Fleet・けんけつノート 運営</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="section alt" id="skills">
+      <div class="wrap">
+        <h2 class="section-title"><span class="mono num">01</span>Skills</h2>
+        <p class="section-lead">業務での開発・運用と、個人サービスの開発・運用の両方で使ってきた技術です。</p>
+        <dl class="skill-rows">
+          <div class="skill-row">
+            <dt class="mono">Languages</dt>
+            <dd>
+              <ul class="chips">
+                <li class="chip">C#</li>
+                <li class="chip">VB.NET</li>
+                <li class="chip">PowerShell</li>
+                <li class="chip">SQL</li>
+                <li class="chip">JavaScript</li>
+                <li class="chip">Java</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="skill-row">
+            <dt class="mono">Backend</dt>
+            <dd>
+              <ul class="chips">
+                <li class="chip">.NET</li>
+                <li class="chip">ASP.NET Core MVC</li>
+                <li class="chip">Entity Framework Core</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="skill-row">
+            <dt class="mono">Database</dt>
+            <dd>
+              <ul class="chips">
+                <li class="chip">PostgreSQL</li>
+                <li class="chip">Oracle Database</li>
+                <li class="chip">SQL Server</li>
+                <li class="chip">MySQL</li>
+                <li class="chip">SQLite</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="skill-row">
+            <dt class="mono">Cloud / Infra</dt>
+            <dd>
+              <ul class="chips">
+                <li class="chip">Oracle Cloud (OCI)</li>
+                <li class="chip">AWS</li>
+                <li class="chip">Cloudflare</li>
+                <li class="chip">Linux</li>
+                <li class="chip">Windows Server</li>
+                <li class="chip">Docker</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="skill-row">
+            <dt class="mono">Enterprise Tools</dt>
+            <dd>
+              <ul class="chips">
+                <li class="chip">DataSpider</li>
+                <li class="chip">WebPerformer</li>
+                <li class="chip">WebFOCUS</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="skill-row">
+            <dt class="mono">Automation</dt>
+            <dd>
+              <ul class="chips">
+                <li class="chip">n8n</li>
+                <li class="chip">Slack Bot</li>
+                <li class="chip">LINE Bot</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= HOBBIES ================= -->
+    <section class="section" id="hobbies">
+      <div class="wrap">
+        <h2 class="section-title"><span class="mono num">02</span>Hobbies</h2>
+        <p class="section-lead">好きなものが、そのまま開発のネタになっています。</p>
+        <ul class="hobby-grid">
+          <li class="hobby hobby-key">
+            <span class="hobby-emoji" aria-hidden="true">✈️</span>
+            <h3>飛行機</h3>
+            <p>国内航空会社の機材（レジ）を追いかけるのが好き。高じて <a href="#jafleet">JA-Fleet</a> を運営中。</p>
+          </li>
+          <li class="hobby hobby-key blood">
+            <span class="hobby-emoji" aria-hidden="true">🩸</span>
+            <h3>献血</h3>
+            <p>16歳から開始、服薬で途中16年間中断後、2025年から再開。年間上限目指して献血中。記録と計画のために <a href="#kenketsu">けんけつノート</a> を作りました。</p>
+          </li>
+        </ul>
+
+        <ul class="like-grid">
+          <li class="like c-sky">
+            <span class="like-icon" aria-hidden="true">🏊</span>
+            <div class="like-body">
+              <h3>水泳</h3>
+            </div>
+          </li>
+          <li class="like c-green">
+            <span class="like-icon" aria-hidden="true">🚃</span>
+            <div class="like-body">
+              <h3>電車</h3>
+              <p>子供と一緒に乗り鉄・撮り鉄</p>
+            </div>
+          </li>
+          <li class="like c-amber">
+            <span class="like-icon" aria-hidden="true">🎵</span>
+            <div class="like-body">
+              <h3>いきものがかり</h3>
+              <p>1年2組<br><span class="mono">2010/07〜</span></p>
+            </div>
+          </li>
+          <li class="like c-purple">
+            <span class="like-icon" aria-hidden="true">🎷</span>
+            <div class="like-body">
+              <h3>吹奏楽（サックス）</h3>
+            </div>
+          </li>
+          <li class="like c-pink">
+            <span class="like-icon" aria-hidden="true">🎹</span>
+            <div class="like-body">
+              <h3>エレクトーン</h3>
+            </div>
+          </li>
+          <li class="like c-sky">
+            <span class="like-icon" aria-hidden="true">💻</span>
+            <div class="like-body">
+              <h3>プログラミング</h3>
+            </div>
+          </li>
+          <li class="like c-red">
+            <span class="like-icon" aria-hidden="true">⚾</span>
+            <div class="like-body">
+              <h3>広島東洋カープ</h3>
+            </div>
+          </li>
+          <li class="like c-green">
+            <span class="like-icon" aria-hidden="true">🧘</span>
+            <div class="like-body">
+              <h3>ラジオ体操・ヨガ</h3>
+              <p>家で毎日やってます</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="challenge">
+          <span class="challenge-icon" aria-hidden="true">⛰️</span>
+          <div class="challenge-body">
+            <p class="work-tag mono">NEW CHALLENGE</p>
+            <h3>登山</h3>
+            <p>未経験から、1年かけて富士山の山頂を目指します。準備の記録は
+              <a href="https://noobow-log.hateblo.jp/entry/fuji-2027-index" target="_blank" rel="noopener">挑戦記インデックス ↗</a></p>
+          </div>
+          <ol class="route mono" aria-label="登山の計画">
+            <li><span class="route-date">2026/07</span><span class="route-label">活動スタート</span></li>
+            <li class="goal"><span class="route-date">2027/07</span><span class="route-label">富士登山 🗻</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WORKS ================= -->
+    <section class="section alt" id="works">
+      <div class="wrap">
+        <h2 class="section-title"><span class="mono num">03</span>Works</h2>
+        <p class="section-lead">趣味 × 開発で、個人で運営している Web サービス。</p>
+
+        <!-- departure board -->
+        <div class="board" role="table" aria-label="運営サービス一覧">
+          <div class="board-row board-head mono" role="row">
+            <span role="columnheader">FLIGHT</span>
+            <span role="columnheader">SERVICE</span>
+            <span role="columnheader">DESTINATION</span>
+            <span role="columnheader">STATUS</span>
+          </div>
+          <a class="board-row mono" role="row" href="#jafleet">
+            <span role="cell">JA 001</span>
+            <span role="cell">JA-FLEET</span>
+            <span role="cell">ja-fleet.noobow.me</span>
+            <span role="cell" class="st-on">ON TIME</span>
+          </a>
+          <a class="board-row mono" role="row" href="#kenketsu">
+            <span role="cell">KN 002</span>
+            <span role="cell">KENKETSU NOTE</span>
+            <span role="cell">kenketsu.noobow.me</span>
+            <span role="cell" class="st-on">ON TIME</span>
+          </a>
+        </div>
+
+        <article class="work" id="jafleet">
+          <div class="work-head">
+            <div>
+              <p class="work-tag mono">HOBBY: ✈️ 飛行機</p>
+              <h3 class="work-title work-logo">
+                <img src="/images/jafleet-logo.webp" width="587" height="163" alt="JA-Fleet 本邦航空会社機材一覧サイト">
+              </h3>
+            </div>
+            <div class="work-actions">
+              <a class="btn btn-primary" href="https://ja-fleet.noobow.me/" target="_blank" rel="noopener">サイトを開く ↗</a>
+              <a class="btn btn-ghost" href="https://github.com/noobow34/JAFleet" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+          <p class="work-desc">
+            日本の航空会社が保有する機材を、レジ（登録記号）単位で一覧・検索できるサイトです。
+            機体ごとの写真、稼働状況、更新履歴を公開し、しばらく飛んでいない機体を自動で検知して知らせます。
+            飛行機好きとして「この機体、今どうしてる？」を手軽に調べたくて作りました。
+          </p>
+          <ul class="feature-list">
+            <li>航空会社グループ・航空会社・型式ごとの機材一覧と、機体ごとの詳細ページ</li>
+            <li>運用状況や Wi-Fi 有無などでの条件検索。検索条件は名前を付けて保存・URL で共有</li>
+            <li>稼働チェックの定期ジョブで「非稼働機」や稼働状況の変化を自動記録</li>
+            <li>航空局の登録データ取込など、運営を回すための管理機能一式</li>
+            <li>X（<a href="https://x.com/ja_fleet" target="_blank" rel="noopener">@ja_fleet</a>）と LINE Bot で更新情報を配信</li>
+          </ul>
+          <ul class="chips small">
+            <li class="chip">.NET 10</li><li class="chip">ASP.NET Core MVC</li><li class="chip">PostgreSQL</li>
+            <li class="chip">EF Core</li><li class="chip">Quartz.NET</li><li class="chip">Gemini API</li><li class="chip">Cloudflare Tunnel / Access</li><li class="chip">OCI</li>
+          </ul>
+        </article>
+
+        <article class="work blood" id="kenketsu">
+          <div class="work-head">
+            <div>
+              <p class="work-tag mono">HOBBY: 🩸 献血</p>
+              <h3 class="work-title work-logo">
+                <img src="/images/kenketsu-logo.webp" width="648" height="228" alt="けんけつノート">
+              </h3>
+              <p class="work-sub">献血の記録・計画管理サービス</p>
+            </div>
+            <div class="work-actions">
+              <a class="btn btn-primary" href="https://kenketsu.noobow.me/" target="_blank" rel="noopener">サイトを開く ↗</a>
+              <a class="btn btn-ghost" href="https://github.com/noobow34/KenketsuNote" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+          <p class="work-desc">
+            全国の献血ルームをスタンプ帳のように記録し、次の献血の計画まで管理できるサービスです。
+            献血には種類ごとの間隔や年間上限があって自分で数えるのが大変なので、それを自動でチェックする仕組みを作りました。
+            会員登録なし、専用 URL だけで使えます。
+          </p>
+          <ul class="feature-list">
+            <li>全国の献血ルームをスタンプ帳形式で記録。ルームごとの献血履歴も確認できる</li>
+            <li>予定・実績を管理し、献血インターバルと年間上限を自動チェック（採血した腕・機器・単位数も記録）</li>
+            <li>閲覧専用 URL を発行してスタンプ帳を SNS でシェア</li>
+            <li>献血ルーム公式ページとの差分を Gemini で定期チェックし、ルーム情報を最新に保つ</li>
+            <li>関連ツール：献血ルームの予約空きを横断検索する Windows アプリ
+              <a href="https://github.com/noobow34/KenketsuAvailability" target="_blank" rel="noopener">KenketsuAvailability</a></li>
+          </ul>
+          <ul class="chips small">
+            <li class="chip">.NET 10</li><li class="chip">ASP.NET Core MVC</li><li class="chip">PostgreSQL</li>
+            <li class="chip">EF Core</li><li class="chip">Quartz.NET</li><li class="chip">Gemini API</li><li class="chip">Cloudflare Tunnel / Access</li><li class="chip">OCI</li>
+          </ul>
+        </article>
+
+        <h3 class="sub-title">Other OSS</h3>
+        <ul class="oss-grid">
+          <li><a class="oss" href="https://github.com/noobow34/RadiCore" target="_blank" rel="noopener">
+            <span class="oss-name mono">RadiCore</span>
+            <span class="oss-desc">radiko のタイムフリー録音・予約・ライブラリ管理を行うセルフホスト型 Web アプリ</span></a></li>
+          <li><a class="oss" href="https://github.com/noobow34/Test-DnsProtocols" target="_blank" rel="noopener">
+            <span class="oss-name mono">Test-DnsProtocols</span>
+            <span class="oss-desc">リゾルバが Do53 / DoT / DoH1-3 / DoQ のどれに対応しているかを PowerShell ひとつで確認</span></a></li>
+          <li><a class="oss" href="https://github.com/noobow34/OgpChecker" target="_blank" rel="noopener">
+            <span class="oss-name mono">OgpChecker</span>
+            <span class="oss-desc">localhost にも使える OGP チェッカー。各 SNS のカード表示をローカルで再現</span></a></li>        </ul>
+      </div>
+    </section>
+
+    <!-- ================= LINKS ================= -->
+    <section class="section" id="links">
+      <div class="wrap">
+        <h2 class="section-title"><span class="mono num">04</span>Links</h2>
+        <ul class="link-grid">
+          <li><a class="link-card" href="https://x.com/noobow" target="_blank" rel="noopener me">
+            <span class="link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.77zm-1.08 16.2h1.7L7.4 4.73H5.57z"/></svg>
+            </span>
+            <span class="link-body"><span class="link-name">X</span><span class="link-id mono">@noobow</span></span>
+            <span class="arrow" aria-hidden="true">↗</span></a></li>
+          <li><a class="link-card" href="https://qiita.com/noobow" target="_blank" rel="noopener me">
+            <span class="link-icon qiita" aria-hidden="true">Q</span>
+            <span class="link-body"><span class="link-name">Qiita</span><span class="link-id mono">@noobow</span></span>
+            <span class="arrow" aria-hidden="true">↗</span></a></li>
+          <li><a class="link-card" href="https://noobow-log.hateblo.jp/" target="_blank" rel="noopener me">
+            <img class="link-icon logo" src="/images/nuborogu.webp" width="128" height="128" loading="lazy" alt="">
+            <span class="link-body"><span class="link-name">ぬぼろぐ</span><span class="link-id mono">はてなブログ</span></span>
+            <span class="arrow" aria-hidden="true">↗</span></a></li>
+          <li><a class="link-card" href="https://github.com/noobow34" target="_blank" rel="noopener me">
+            <span class="link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5"/></svg>
+            </span>
+            <span class="link-body"><span class="link-name">GitHub</span><span class="link-id mono">noobow34</span></span>
+            <span class="arrow" aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner mono">
+      <span>© <span id="year">2026</span> noobow</span>
+      <span class="footer-note">Served from the edge by Cloudflare Workers ✈</span>
+    </div>
+  </footer>
+</body>
+</html>

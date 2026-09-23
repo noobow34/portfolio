@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "noobow-portfolio",
+  "compatibility_date": "2026-09-01",
+  // Worker スクリプトなしで public/ を静的配信する（Workers Static Assets）
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  },
+  // apex（noobow.me）で公開する。既存の noobow-me-apex Worker のルートを先に外すこと。
+  "routes": [{ "pattern": "noobow.me", "custom_domain": true }]
+}
